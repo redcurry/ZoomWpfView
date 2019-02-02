@@ -1,0 +1,47 @@
+﻿<Window
+    x:Class="ZoomWpfView.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Zoom Views"
+    Loaded="MainWindow_OnLoaded"
+    >
+    <DockPanel>
+        <StackPanel
+            DockPanel.Dock="Top"
+            Orientation="Horizontal"
+            >
+            <Button
+                x:Name="ZoomInButton"
+                Click="ZoomInButton_OnClick"
+                Content="Zoom In"
+                />
+            <Button
+                x:Name="ZoomOutButton"
+                Click="ZoomOutButton_OnClick"
+                Content="Zoom Out"
+                />
+            <Button
+                x:Name="ResetZoomButton"
+                Click="ResetZoomButton_OnClick"
+                Content="Reset Zoom"
+                />
+            <Slider
+                x:Name="ZoomSlider"
+                ValueChanged="ZoomSlider_OnValueChanged"
+                IsSnapToTickEnabled="True"
+                Width="100"
+                />
+            <TextBlock
+                x:Name="ZoomTextBlock"
+                />
+        </StackPanel>
+
+        <Grid x:Name="MainView">
+            <StackPanel HorizontalAlignment="Left">
+                <CheckBox>Option 1</CheckBox>
+                <CheckBox>Option 2</CheckBox>
+                <Button>OK</Button>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
