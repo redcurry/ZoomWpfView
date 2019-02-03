@@ -4,6 +4,8 @@ namespace ZoomWpfView
 {
     public class Zoom
     {
+        private const double Tolerance = 0.0001;
+
         public Zoom(double step, double min, double max)
         {
             Step = step;
@@ -29,10 +31,10 @@ namespace ZoomWpfView
 
         public void Reset() => Value = 1.0;
 
-        public bool CanZoomIn() => Value < Maximum;
+        public bool CanZoomIn() => Value - Maximum < -Tolerance;
 
-        public bool CanZoomOut() => Value > Minimum;
+        public bool CanZoomOut() => Value - Minimum > Tolerance;
 
-        public bool CanReset() => Math.Abs(Value - 1.0) > 0.0001;
+        public bool CanReset() => Math.Abs(Value - 1.0) > Tolerance;
     }
 }
