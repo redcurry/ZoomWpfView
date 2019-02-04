@@ -10,20 +10,20 @@
             Orientation="Horizontal"
             >
             <Button
-                Command="{Binding ZoomInCommand}"
                 Content="Zoom In"
+                Command="{Binding ZoomInCommand}"
                 />
             <Button
-                Command="{Binding ZoomOutCommand}"
                 Content="Zoom Out"
+                Command="{Binding ZoomOutCommand}"
                 />
             <Button
-                Command="{Binding ResetZoomCommand}"
                 Content="Reset Zoom"
+                Command="{Binding ResetZoomCommand}"
                 />
             <Slider
-                Minimum="{Binding ScaleMinimum}"
-                Maximum="{Binding ScaleMaximum}"
+                Minimum="{Binding MinimumScale}"
+                Maximum="{Binding MaximumScale}"
                 Value="{Binding Scale}"
                 TickFrequency="{Binding ScaleStep}"
                 IsSnapToTickEnabled="True"
